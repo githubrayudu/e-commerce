@@ -1,0 +1,96 @@
+
+:root {
+  --primary: #00B383;
+  --primary-dark: #008C6E;
+  --accent: #FFD369;
+  --dark: #1A1A1A;
+  --light-bg: #F5F7F8;
+  --footer-bg: #003F3F;
+  --text-light: #555;
+}
+
+body {
+  color: var(--dark);
+  background: var(--light-bg);
+}
+.hero .btn-primary {
+  background: var(--primary);
+}
+  
+body {
+  font-family: 'Archivo', sans-serif;
+  color: #1A1A1A;
+  line-height: 1.6;
+}
+
+.logo,
+nav ul li a,
+.hero h1,
+.module-card h3,
+.feature-box h4,
+.clients h2,
+footer h4 {
+  color: #003F3F;
+}
+
+.hero {
+  background: #F5F7F8;
+}
+
+.hero .btn-primary,
+.nav-cta a,
+.cta-banner {
+  background: #00B383;
+  color: white;
+}
+
+.hero .btn-primary:hover,
+.nav-cta a:hover {
+  background: #008C6E;
+}
+
+.module-card {
+  background: #ffffff;
+}
+
+.module-card:hover,
+.feature-box:hover {
+  box-shadow: 0 8px 24px rgba(0, 179, 131, 0.15);
+}
+
+.module-card .icon,
+.feature-box i {
+  color: #00B383;
+}
+
+.feature-box {
+  background: #ffffff;
+}
+
+.cta-banner {
+  background: #FFD369;
+  color: #003F3F;
+}
+
+.cta-banner .btn-secondary {
+  background: #00B383;
+  color: white;
+}
+
+.cta-banner .btn-secondary:hover {
+  background: #008C6E;
+  color: #ffffff;
+}
+
+footer {
+  background: #003F3F;
+  color: white;
+}
+
+footer a {
+  color: #b2d8d8;
+}
+
+footer a:hover {
+  color: #ffffff;
+}

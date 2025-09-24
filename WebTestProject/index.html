@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SP – AP Automation, Payments & Compliance</title>
+  <meta name="description" content="SP is a finance automation platform offering AP automation, payments controls, compliance & supply chain financing." />
+<link rel="stylesheet" href="styles.css">
+
+ <style>
+    /* Reset / base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Archivo', sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ----- Navigation ----- */
+    header {
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #0A2540;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+    nav ul li a {
+      color: #0A2540;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #126659;
+    }
+    .nav-cta a {
+      padding: 0.6rem 1.4rem;
+      background: #126659;
+      color: white;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    /* ----- Hero / Banner ----- */
+    .hero {
+      padding: 100px 0;
+      background: #f4f7fa;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      color: #0A2540;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: #555;
+    }
+    .hero .btn-primary {
+      padding: 0.8rem 2rem;
+      background: #126659;
+      color: white;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .hero .btn-primary:hover {
+      background: #ea6214;
+    }
+
+    /* ----- Features / Product Modules ----- */
+    .modules {
+      padding: 80px 0;
+      background: white;
+    }
+    .modules .module-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+    .module-card {
+      background: #fafafa;
+      border-radius: 8px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .module-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    .module-card .icon {
+      font-size: 2.5rem;
+      color: #126659;
+      margin-bottom: 1rem;
+    }
+    .module-card h3 {
+      font-size: 1.3rem;
+      color: #0A2540;
+      margin-bottom: 0.7rem;
+    }
+    .module-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* ----- Features / Detailed Section ----- */
+    .features {
+      padding: 80px 0;
+      background: #f9fafb;
+    }
+    .features .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+    .feature-box {
+      background: white;
+      border-radius: 8px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .feature-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    .feature-box i {
+      font-size: 2rem;
+      color: #126659;
+      margin-bottom: 1rem;
+    }
+    .feature-box h4 {
+      font-size: 1.2rem;
+      color: #0A2540;
+      margin-bottom: 0.7rem;
+    }
+    .feature-box p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* ----- Clients / Logos ----- */
+    .clients {
+      padding: 60px 0;
+      background: white;
+      text-align: center;
+    }
+    .clients h2 {
+      margin-bottom: 2rem;
+      color: #0A2540;
+    }
+    .clients .logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .clients .logos img {
+      max-height: 60px;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    .clients .logos img:hover {
+      opacity: 1;
+    }
+
+    /* ----- CTA Banner ----- */
+    .cta-banner {
+      background: #126659;
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+    }
+    .cta-banner h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .cta-banner p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .cta-banner .btn-secondary {
+      padding: 0.8rem 2rem;
+      background: white;
+      color: #126659;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background 0.3s, color 0.3s;
+    }
+    .cta-banner .btn-secondary:hover {
+      background: #e6e6e6;
+      color: #126659;
+    }
+
+    /* ----- Footer ----- */
+    footer {
+      background: #0A2540;
+      color: white;
+      padding: 40px 0;
+    }
+    footer .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    footer h4 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    footer a {
+      color: #d0d4db;
+      font-size: 0.95rem;
+    }
+    footer a:hover {
+      color: white;
+    }
+    footer .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .nav-inner {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+    }
+
+  </style>  
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header>
+    <div class="container nav-inner">
+      <div class="logo">SP</div>
+      <nav>
+        <ul>
+          <li><a href="#modules">Products</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#clients">Customers</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="#contact">Request Demo</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero / Banner -->
+  <section class="hero">
+    <div class="container">
+      <h1>Finance Automation for Modern Enterprises</h1>
+      <p>Automate your payables, payments, reconciliation, and compliance with confidence.</p>
+      <a href="#contact" class="btn-primary">Book a Free Demo</a>
+    </div>
+  </section>
+
+  <!-- Modules / Product Highlights -->
+  <section id="modules" class="modules">
+    <div class="container">
+      <div class="module-grid">
+        <div class="module-card">
+          <div class="icon"><i class="fas fa-file-invoice"></i></div>
+          <h3>AP Automation</h3>
+          <p>High-accuracy OCR, invoice matching, compliance checks and posting to ERP.</p>
+        </div>
+        <div class="module-card">
+          <div class="icon"><i class="fas fa-credit-card"></i></div>
+          <h3>Payments & Controls</h3>
+          <p>Multi-bank payments, rule-based workflows, approval controls, audit readiness.</p>
+        </div>
+        <div class="module-card">
+          <div class="icon"><i class="fas fa-balance-scale"></i></div>
+          <h3>Compliance & GST</h3>
+          <p>e-Invoice, GST reconciliation, validation, filing support, e-way bill integration.</p>
+        </div>
+        <div class="module-card">
+          <div class="icon"><i class="fas fa-users"></i></div>
+          <h3>Vendor Management</h3>
+          <p>Vendor onboarding, KYC, portal, communication, ledger coordination.</p>
+        </div>
+        <div class="module-card">
+          <div class="icon"><i class="fas fa-network-wired"></i></div>
+          <h3>Supply Chain Finance</h3>
+          <p>Dynamic cash discounting, vendor financing, PO / GRN financing options.</p>
+        </div>
+        <div class="module-card">
+          <div class="icon"><i class="fas fa-plug"></i></div>
+          <h3>ERP Integrations</h3>
+          <p>Seamless connectivity with SAP, Oracle, Dynamics, Netsuite, and others.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Features -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2>Why SP Stands Out</h2>
+      <div class="features-grid">
+        <div class="feature-box">
+          <i class="fas fa-robot"></i>
+          <h4>Invoice OCR & Auto-Book</h4>
+          <p>Extract data and auto-book invoices with AI accuracy.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-arrows-alt-h"></i>
+          <h4>6-way Matching</h4>
+          <p>Match PO, GRN, invoices, TDS, cost center, and more to ensure accuracy.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-check-circle"></i>
+          <h4>Compliance Checks</h4>
+          <p>GST validation, document checks, audit-ready validation.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-check-double"></i>
+          <h4>Approval Workflows</h4>
+          <p>Custom multi-level rules for invoice & payments approvals.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-database"></i>
+          <h4>AP Data Lake</h4>
+          <p>Unified repository for all payable data and analytics.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-hand-holding-usd"></i>
+          <h4>Dynamic Cash Discounting</h4>
+          <p>Offer early payment discounts for working capital optimization.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-coins"></i>
+          <h4>Vendor Financing</h4>
+          <p>Enable flexible payables financing options.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-receipt"></i>
+          <h4>PO / GRN Financing</h4>
+          <p>Finance invoices based on PO or GRN stages.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-file-invoice-dollar"></i>
+          <h4>Multi-Bank Payments</h4>
+          <p>Disburse across many bank accounts with routing logic.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-sync-alt"></i>
+          <h4>Auto-ERP Posting</h4>
+          <p>Post approved invoices automatically to your ERP.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-bell"></i>
+          <h4>Notification Engine</h4>
+          <p>Email / SMS / in-app alerts for activity and exceptions.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-shield-alt"></i>
+          <h4>Fraud Detection</h4>
+          <p>Flag anomalies, duplicates, and irregular patterns.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-globe"></i>
+          <h4>Multi-Currency</h4>
+          <p>Transactions across geographies and currencies with ease.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-chart-line"></i>
+          <h4>Dashboards & Analytics</h4>
+          <p>Visualize AP, cash flows, and KPI tracking in dashboards.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-file-alt"></i>
+          <h4>Audit Reports</h4>
+          <p>Export detailed logs, compliance reports, and history.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients / Logos -->
+  <section id="clients" class="clients">
+    <div class="container">
+      <h2>Trusted by Leading Enterprises</h2>
+      <div class="logos">
+        <!-- Example logos, replace with yours -->
+        <!-- <img src="logo1.png" alt="Client 1" />
+        <img src="logo2.png" alt="Client 2" />
+        <img src="logo3.png" alt="Client 3" />
+        <img src="logo4.png" alt="Client 4" />
+        <img src="logo5.png" alt="Client 5" /> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Ready to Transform Your Finance Operations?</h2>
+      <p>See how SP can help your organization automate, comply, and scale.</p>
+      <a href="#contact" class="btn-secondary">Request a Demo</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>SP</h4>
+        <p>Automating finance, payments & compliance for enterprises.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <p><a href="#modules">AP Automation</a></p>
+        <p><a href="#modules">Payments & Controls</a></p>
+        <p><a href="#modules">Compliance & GST</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <p><a href="#">Blog</a></p>
+        <p><a href="#">Case Studies</a></p>
+        <p><a href="#">FAQ</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Email: info@sp.com</p>
+        <p>Address: 123 Finance Street, City, Country</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 SP. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
